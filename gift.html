@@ -2,33 +2,23 @@
 <script src="script.js"></script>
 <body class="container">
       <style>
-  .btn-back {
+.btn-back {
   position: fixed;
   top: 20px;
   left: 20px;
-  z-index: 9999; /* This must be high to sit above the flowers */
+  z-index: 9999;
   padding: 10px 20px;
   border-radius: 20px;
   border: 1px solid white;
   background: rgba(0, 0, 0, 0.6);
   color: white;
-  cursor: pointer;
-}
+  text-decoration: none;
 }
 
-.btn-back:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateX(-5px);
-}
     </style>
-<div id="giftPage" class="page hidden" style="background: #000;">
   
-  <button class="btn-back" onclick="backToMessage()">← Back to Letter</button>
+  <a href="index.html" class="btn-back">← Back to Letter</a>
 
-      <a href="index.html"">
-  <button class="btn-back">← Back to Letter</button>
-  </a>
-      
   <div class="night"></div>
   <div class="flowers">
     </div>
