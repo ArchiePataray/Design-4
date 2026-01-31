@@ -2,11 +2,15 @@ onload = () => {
   document.body.classList.remove("container");
 };
 
-        function backToMessage() {
-  // Hide the flower container (change ID to match your container)
-  document.getElementById("flower-container").classList.add("hidden"); 
+   function backToMessage() {
+  // 1. Hide the gift/flower page
+  document.getElementById("giftPage").classList.add("hidden");
   
-  // Show the message page
+  // 2. Show the letter/message page
   document.getElementById("messagePage").classList.remove("hidden");
 }
-  
+
+// Ensure your "Open Gift" button also uses the correct ID:
+function showGift() {
+  document.getElementById("messagePage").classList.add("hidden");
+  document.getElementById("giftPage").classList.remove("hidden");
