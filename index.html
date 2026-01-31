@@ -1,0 +1,220 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">  
+<title>Valentine Card</title>  
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;600&display=swap" rel="stylesheet">  
+<style>  
+* { box-sizing: border-box; }  
+  
+body {  
+  margin: 0;  
+  font-family: 'Poppins', sans-serif;  
+  overflow: hidden;  
+}  
+  
+/* Page layout */  
+.page {  
+  position: fixed;  
+  width: 100%;  
+  height: 100dvh;  
+  top: 0;  
+  left: 0;  
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+  padding: clamp(16px, 4vw, 40px);  
+  transition: opacity 0.8s ease, transform 0.8s ease;  
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);  
+}  
+  
+/* Hidden state */  
+.hidden {  
+  opacity: 0;  
+  pointer-events: none;  
+  transform: scale(1.05);  
+}  
+  
+/* Falling hearts */  
+.heart {  
+  position: fixed;  
+  top: -10px;  
+  animation: fall linear infinite;  
+  color: rgba(255,255,255,0.7);  
+  user-select: none;  
+  pointer-events: none;  
+  z-index: 0;  
+}  
+@keyframes fall {  
+  to { transform: translateY(110dvh); }  
+}  
+  
+/* Card containers */  
+.card, .message-box, .gift-box {  
+  position: relative;  
+  z-index: 1;  
+  background: rgba(255, 255, 255, 0.9);  
+  padding: clamp(24px, 5vw, 45px) clamp(20px, 4vw, 35px);  
+  border-radius: 30px;  
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);  
+  max-width: 600px;  
+  width: 100%;  
+  text-align: center;  
+}
+
+/* ENVELOPE ICON */
+.envelope-visual {
+  font-size: 100px;
+  margin-bottom: 20px;
+  display: block;
+}
+  
+/* Make long message scroll inside */  
+.message-box {  
+  max-height: 85dvh;  
+  overflow-y: auto;  
+}  
+  
+/* Titles */  
+h1 {  
+  font-size: clamp(32px, 7vw, 48px); 
+  margin-bottom: 20px;  
+  color: #d63384;  
+  font-family: 'Great Vibes', cursive; 
+}  
+  
+.message-box h1, .gift-box h1 {  
+  font-family: 'Great Vibes', cursive;  
+  color: #5a2a2a;  
+}  
+  
+/* Message text */  
+.message-box p, .gift-box p {  
+  color: #5a2a2a;  
+  font-size: clamp(15px, 4vw, 17px);  
+  line-height: 1.75;  
+  margin-bottom: 18px;  
+}  
+
+.message-box p { text-align: left; }
+  
+/* Buttons */  
+button {  
+  margin-top: 15px;  
+  padding: 12px 35px;  
+  border-radius: 50px;  
+  border: none;  
+  background: #f06292;  
+  color: white;  
+  font-size: 16px;  
+  font-weight: 600;
+  cursor: pointer;  
+  transition: transform 0.2s, background 0.3s;  
+  box-shadow: 0 4px 15px rgba(240, 98, 146, 0.4);
+}  
+button:hover { 
+    background: #e91e63; 
+    transform: translateY(-2px);
+}  
+
+/* Flower Swaying Animation */
+.flower-display {
+  font-size: 120px;
+  margin: 30px 0;
+  display: inline-block;
+  animation: sway 4s ease-in-out infinite;
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-8deg) scale(1); }
+  50% { transform: rotate(8deg) scale(1.1); }
+}
+
+.gift-icon {
+    font-size: 80px;
+    margin-bottom: 10px;
+}
+  
+/* Landscape small-height fix */  
+@media (max-height: 500px) and (orientation: landscape) {  
+  .page { align-items: flex-start; padding-top: 20px; }  
+  .message-box { max-height: 75dvh; }  
+}  
+</style>  
+</head>  
+<body>  
+
+<div class="page" id="frontPage">  
+  <div class="card">  
+    <h1>Happy Valentine’s Day</h1>
+    <span class="envelope-visual">✉️</span>
+    <br>
+    <button onclick="openCard()">Open Card</button>  
+  </div>  
+</div>  
+
+<div class="page hidden" id="messagePage" style="background: linear-gradient(135deg, #ffdde1, #ee9ca7);">  
+  <div class="message-box">  
+    <h1>Happy Valentine’s Day</h1>  
+    <p>Hi Diana, I know we haven’t talked in a while, but I just wanted to reach out today with honesty and respect. I still care about you, and I still appreciate what we shared, even if life took us in a different direction for now. What we had was meaningful to me, and it’s something I look back on with warmth, not regret.</p>  
+    <p>I still remember how everything started. You were always so warm toward me, always smiling, always making the effort to be your best whenever we crossed paths. I noticed it more than I ever said. Back then, my mindset was to avoid feelings because I thought love would distract me from my goals. But you were different. Your sincerity, your effort, and your presence slowly broke down the walls I tried to keep up.</p>  
+    <p>I tried to fight my feelings at first. My mind told me to stay focused and keep my distance, but my heart kept pulling me closer to you. Even when I tried to create space, I couldn’t fully walk away, because being around you felt natural and right. Over time, you became someone I thought about often, someone who mattered to me more than I planned or expected. And when I finally admitted my feelings, it came from a place that was honest and real.</p>  
+    <p><strong>I really like you...</strong></p>  
+    <p>For so many reasons I realized I like your flaws, your imperfections, and the way they make you so perfectly you. I love your personality, your vibe, and how you just light up everything around you. Your style is effortless, and your smile... it just makes everything better.</p>  
+    <p>I also understand that when things started to grow between us, life asked something different from both of us. I don’t know what the future holds, and I’m not trying to put any pressure on you. I just want you to know that my feelings came from a real place, and so does my respect for your space and your journey. I like you, I still care about you, but I will keep growing and living my life. If the future gives us another chance, that would be something really special. But if life leads us in different directions, I’m still grateful because knowing you inspired me to grow. Wishing you happiness always.</p>  
+    <p>I hope you’re doing well, finding success in your work, and taking care of yourself. You deserve happiness, peace of mind, and people around you who support your dreams.</p>  
+    <p>No matter where life leads us, I’ll always wish you the best — today and always.</p>  
+
+    <hr style="border: 0; border-top: 1px solid rgba(90, 42, 42, 0.1); margin: 25px 0;">
+    <div class="gift-icon">🎁</div>
+    <p style="text-align: center; font-weight: 600;">Here's a simple gift for you:</p>
+    <button onclick="showGift()">Open a gift</button>
+
+    <button onclick="closeCard()" style="background: #9e9e9e; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: block; margin: 30px auto 0 auto;">Close Card</button>
+  </div>  
+</div>  
+
+<div class="page hidden" id="giftPage" style="background: #fff5f7;">
+  <div class="gift-box">
+    <h1>A digital flowers for you</h1>
+    <div class="flower-display">🌹</div>
+    <p style="font-weight: 600;">A digital rose for you.</p>
+    <p>I hope this brings a smile to your face today.</p>
+    <button onclick="backToMessage()">Go Back</button>
+  </div>
+</div>
+
+<script>  
+// Floating hearts  
+for (let i = 0; i < 35; i++) {  
+  const heart = document.createElement("div");  
+  heart.className = "heart";  
+  heart.innerHTML = "❤";  
+  heart.style.left = Math.random() * 100 + "vw";  
+  heart.style.animationDuration = (5 + Math.random() * 5) + "s";  
+  heart.style.fontSize = (15 + Math.random() * 20) + "px";  
+  document.body.appendChild(heart);  
+}  
+  
+function openCard() {  
+  document.getElementById("frontPage").classList.add("hidden");  
+  document.getElementById("messagePage").classList.remove("hidden");  
+}  
+
+function showGift() {
+  document.getElementById("messagePage").classList.add("hidden");
+  document.getElementById("giftPage").classList.remove("hidden");
+}
+
+function backToMessage() {
+  document.getElementById("giftPage").classList.add("hidden");
+  document.getElementById("messagePage").classList.remove("hidden");
+}
+  
+function closeCard() {  
+  document.getElementById("messagePage").classList.add("hidden");  
+  document.getElementById("frontPage").classList.remove("hidden");  
+}  
+</script>  
+</body>  
+</html>
